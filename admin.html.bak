@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="chat-app" class="admin">
+    <header>
+      <h1>Admin Chat Panel</h1>
+    </header>
+    <main id="messages"></main>
+    <form id="form">
+      <input type="text" id="message" placeholder="Balas pesan..." autocomplete="off" required />
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
+
+  <script>
+    const password = prompt("Masukkan password admin:");
+    if (password !== "admin145") {
+      alert("Password salah! Akses ditolak.");
+      window.location.href = "/";
+    }
+  </script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
